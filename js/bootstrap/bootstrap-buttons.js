@@ -21,7 +21,8 @@
 
   "use strict"
 
-  function setState(el, state) {
+  function setState(el, state)
+  {
     var d = 'disabled'
       , $el = $(el)
       , data = $el.data()
@@ -36,25 +37,31 @@
       $el.removeClass(d).removeAttr(d)
   }
 
-  function toggle(el) {
+  function toggle(el)
+  {
     $(el).toggleClass('active')
   }
 
-  $.fn.button = function(options) {
-    return this.each(function () {
-      if (options == 'toggle') {
+  $.fn.button = function(options)
+  {
+    return this.each(function ()
+                     {
+      if (options == 'toggle') 
+      {
         return toggle(this)
       }
       options && setState(this, options)
     })
   }
 
-  $.fn.button.defaults = {
+  $.fn.button.defaults = 
+    {
     loadingText: 'loading...'
   }
 
   $(function () {
-    $('body').delegate('.btn[data-toggle]', 'click', function () {
+    $('body').delegate('.btn[data-toggle]', 'click', function ()
+                       {
       $(this).button('toggle')
     })
   })
